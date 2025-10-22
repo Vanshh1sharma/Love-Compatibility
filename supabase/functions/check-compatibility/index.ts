@@ -19,16 +19,18 @@ serve(async (req) => {
       throw new Error("LOVABLE_API_KEY is not configured");
     }
 
-    // Build the zodiac info for the prompt
+    // Build the zodiac and age info for the prompt
+    const age1 = person1.age ? `, Age: ${person1.age}` : "";
     const zodiac1 = person1.zodiac ? `, Zodiac: ${person1.zodiac}` : "";
+    const age2 = person2.age ? `, Age: ${person2.age}` : "";
     const zodiac2 = person2.zodiac ? `, Zodiac: ${person2.zodiac}` : "";
 
     const prompt = `Compare the compatibility between these two people based on their bios:
 
-Person 1: ${person1.name}${zodiac1}
+Person 1: ${person1.name}${age1}${zodiac1}
 Bio: ${person1.bio}
 
-Person 2: ${person2.name}${zodiac2}
+Person 2: ${person2.name}${age2}${zodiac2}
 Bio: ${person2.bio}
 
 Make it humorous, romantic, and creative! Include:

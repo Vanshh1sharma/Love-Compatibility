@@ -17,12 +17,14 @@ const Compatibility = () => {
     name: "",
     bio: "",
     zodiac: "",
+    age: "",
   });
   
   const [person2, setPerson2] = useState({
     name: "",
     bio: "",
     zodiac: "",
+    age: "",
   });
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -135,6 +137,18 @@ const Compatibility = () => {
               </div>
 
               <div className="space-y-2">
+                <Label htmlFor="age1" className="text-base">Age (Optional)</Label>
+                <Input
+                  id="age1"
+                  type="number"
+                  placeholder="Enter age..."
+                  value={person1.age}
+                  onChange={(e) => setPerson1({ ...person1, age: e.target.value })}
+                  className="text-base"
+                />
+              </div>
+
+              <div className="space-y-2">
                 <Label htmlFor="zodiac1" className="text-base">Zodiac Sign (Optional)</Label>
                 <Input
                   id="zodiac1"
@@ -171,6 +185,18 @@ const Compatibility = () => {
                   value={person2.bio}
                   onChange={(e) => setPerson2({ ...person2, bio: e.target.value })}
                   className="min-h-[120px] text-base resize-none"
+                />
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="age2" className="text-base">Age (Optional)</Label>
+                <Input
+                  id="age2"
+                  type="number"
+                  placeholder="Enter age..."
+                  value={person2.age}
+                  onChange={(e) => setPerson2({ ...person2, age: e.target.value })}
+                  className="text-base"
                 />
               </div>
 
