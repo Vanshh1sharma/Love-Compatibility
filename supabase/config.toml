@@ -1,0 +1,4 @@
+project_id = "aykvufltxdwmnkzkmpss"
+
+[functions.check-compatibility]
+verify_jwt = false
