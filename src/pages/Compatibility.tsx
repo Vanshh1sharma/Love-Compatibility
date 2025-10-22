@@ -30,10 +30,10 @@ const Compatibility = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (!person1.name || !person1.bio || !person2.name || !person2.bio) {
+    if (!person1.name || !person1.bio || !person1.age || !person2.name || !person2.bio || !person2.age) {
       toast({
         title: "Missing Information",
-        description: "Please fill in names and bios for both people! 💕",
+        description: "Please fill in names, ages, and bios for both people! 💕",
         variant: "destructive",
       });
       return;
@@ -137,7 +137,7 @@ const Compatibility = () => {
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="age1" className="text-base">Age (Optional)</Label>
+                <Label htmlFor="age1" className="text-base">Age</Label>
                 <Input
                   id="age1"
                   type="number"
@@ -145,6 +145,7 @@ const Compatibility = () => {
                   value={person1.age}
                   onChange={(e) => setPerson1({ ...person1, age: e.target.value })}
                   className="text-base"
+                  required
                 />
               </div>
 
@@ -189,7 +190,7 @@ const Compatibility = () => {
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="age2" className="text-base">Age (Optional)</Label>
+                <Label htmlFor="age2" className="text-base">Age</Label>
                 <Input
                   id="age2"
                   type="number"
@@ -197,6 +198,7 @@ const Compatibility = () => {
                   value={person2.age}
                   onChange={(e) => setPerson2({ ...person2, age: e.target.value })}
                   className="text-base"
+                  required
                 />
               </div>
 
